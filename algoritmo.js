@@ -3,8 +3,12 @@ const contrasenias = [];
 
 let estadoUsuario = 0;
 
+
+/**
+ * guarda los registros de usuarios en el local Store
+ */
 function registrarUsuario() {
-    if (estadoUsuario == 0) {
+    estadoUsuario == 0
 
         const inputEmail = document.querySelector("#email").value
         const contraseniaInput = document.querySelector("#contraseña").value
@@ -12,38 +16,40 @@ function registrarUsuario() {
         emails.push(inputEmail);
         contrasenias.push(contraseniaInput + contraseniaInput);
 
-        localStorage.setItem(inputEmail.value, JSON.stringify(contraseniaInput.value))
+        /* localStorage.setItem(inputEmail.value, JSON.stringify(contraseniaInput.value)) */
 
         console.log(emails);
         console.log(contrasenias);
     }
 
-}
 
 
 
+/**
+ * verifica si el usuario y contraseña son correctos
+ */
 function logearUsuario() {
     const inputEmail = document.querySelector("#email").value
     const contraseniaInput = document.querySelector("#contraseña").value
     let contrasenia = inputEmail + contraseniaInput;
+    /* 
+        if (localStorage.getItem(inputEmail.value, JSON.stringify(contraseniaInput.value))) {
+            alert ("correctos");
+          } else {
+            alert("incorrectos");
+          } */
 
-    if (localStorage.getItem(inputEmail.value, JSON.stringify(contrasenia.value))) {
-        alert ("correctos");
-      } else {
-        alert("incorrectos");
-      }
-
-    /* if (emails.includes(inputEmail) && contrasenias.includes(contrasenia)) {
+    if (emails.includes(inputEmail) && contrasenias.includes(contrasenia)) {
         if (emails.indexOf(inputEmail) == contrasenias.indexOf(contrasenia)) {
-            alert("datos correctos")
+            window.location.href = "https://www.google.com"
         }
         else {
             alert("Datos incorrectos")
         }
     }
-    /* else {
+    else {
         alert("Datos incorrectos")
-    } */ 
+    }
 }
 
 

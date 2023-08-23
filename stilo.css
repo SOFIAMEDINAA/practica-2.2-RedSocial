@@ -1,0 +1,5 @@
+body{
+    place-content: center;
+    background-color: rgb(177, 188, 211);
+    display: grid;
+}
